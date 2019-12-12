@@ -1,0 +1,15 @@
+##########################
+# case X # automation    #
+##########################
+#drop this file into your caseX folder
+
+#replace the # with your number
+
+#right click the file and select 'run with powershell' 
+
+#if prompted for permissions, type 'a' and hit enter
+
+Get-ChildItem -Recurse | `
+   Where-Object {$_.Name -match 'CaseX'} | `
+     Rename-Item -NewName { $_.Name -replace 'CaseX','Case#' }
+#replace the # with your number                   here >>>^<<<
